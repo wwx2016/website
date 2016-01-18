@@ -1,0 +1,118 @@
+(: static function document(title, body) :)
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <title>(: title :)</title>
+      <link rel="stylesheet" href="/assets/styles.css">
+      <link href='https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+      (: body :)
+      <script src="/assets/script.js"></script>
+    </body>
+  </html>
+(: end :)
+
+(: static var nav :)
+  <nav>
+    <ul>
+      <li><a href="#location">Location</a></li>
+      <li><a href="#register">Register</a></li>
+      <li><a href="#speakers">Speakers</a></li>
+      <li><a href="#schedule">Schedule</a></li>
+      <li><a href="https://github.com/wwx2016/organization">Organization</a></li>
+    </ul>
+  </nav>
+(: end :)
+
+(: static var header :)
+  <header>
+    <h1>WWX<span class="year">2016</span></h1>
+    <a class="powered-by" href="http://silexlabs.org/">
+      proudly hosted by
+      <img src="/assets/sponsors/silexlabs.org.png">
+    </a>
+    <a class="register" href="#register">
+      Register Now
+    </a>
+  </header>
+(: end :)
+    
+(: static function section(title:String, content) :)
+  (: var id = title.toLowerCase().replace(' ', '-') :)
+  <a name="(: id :)">&nbsp;</a>   
+  <section class="(: id :)">
+    <h1><a href="#(: id :)">(: title :)</a></h1>
+    (: content :)
+  </section>  
+(: end :)
+
+(: static var intro :)
+  <section class="intro">
+    <h2>Be part of the ultimate Haxe community event!</h2>
+    <p>This 6th edition of the annual world wide Haxe conference is the place to be at the end of May 2016. Two days of workshops and hackathons, two days of talks, three nights to hang out with fellow Haxers, from all over the planet. Get to meet the people behind Haxe and its ecosystem. Share you experiences with this versatile technology.</p>
+  </section>
+(: end :)
+
+(: static var speakers :)       
+  <ul>
+    (: for i in 0...23 :)
+    <li>
+      <div class="image">
+        <img src="/assets/speakers/Yoda2.jpg">
+      </div>
+      <h3>Do or do not,<br>there is no try!</h3>
+      <p><a href="#">@Yoda</a> &ndash; CTO at the rebel aliance. Grammar enthusiast.</p>
+    </li>
+    (: end :)
+    <li>
+      <div class="image">
+        <a class="add" href="https://github.com/wwx2016/organization/#call-to-speakers">+</a>
+      </div>
+      <h3>More to come ...</h3>
+      <p>Want to talk about something? Want to hear about something? <a href="https://github.com/wwx2016/organization/#call-to-speakers">Tell us!</a></p>
+    </li>
+  </ul>
+(: end :)
+
+(: static var location :)       
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quid ait Aristoteles reliquique Platonis alumni? Hunc vos beatum; Quae est igitur causa istarum angustiarum? </p>
+
+  <p>Nunc agendum est subtilius. <b>Esse enim, nisi eris, non potes.</b> Verum hoc idem saepe faciamus. Quae sequuntur igitur? <b>Disserendi artem nullam habuit.</b> </p>
+(: end :)
+        
+(: static var register :)
+
+(: end :)
+        
+(: static var schedule :)
+  <p>DISCLAIMER: The schedule is still evolving as more and more talks and workshops are announced.</p>
+  <ol class="days">
+    (: for day in 'Friday,Saturday,Sunday,Monday'.split(',') :)
+    <li>
+      <h2>(: day :)</h2>
+      <ol class="times">
+        (:for i in 0...5+Std.random(5) :)
+        <li>
+          <p class="coords"><span class="time">14:00 - 15:30</span> <span class="space">Mozilla</span></p>
+          <h3>Do or do not, there is no try!</h3>
+          <p class="speaker">&ndash; Master Yoda</p>
+        </li>
+        (: end :)
+      </ol>
+    </li>
+    (: end :)
+  </ol>
+(: end :)
+
+(: static var homepage :)
+  (: nav :)
+  (: header :)
+  (: intro :)
+  (: section('Speakers', speakers) :)
+  (: section('Register', register) :)
+  (: section('Location', location) :)
+  (: section('Schedule', schedule) :)
+(: end :)

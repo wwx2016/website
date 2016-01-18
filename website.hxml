@@ -1,0 +1,6 @@
+-lib foxhole
+-lib tink_template
+-cp src
+-neko bin/website.n
+-main Main
+--macro Lessc.build()

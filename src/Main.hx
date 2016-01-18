@@ -15,6 +15,7 @@ using StringTools;
   #error
 #end
 
+@:template 
 class Main {
   static var EMPTY = Bytes.alloc(0);
   
@@ -69,14 +70,14 @@ class Main {
     #end
 	}
   
-  @:template static var site;
+  //@:template static var site;
   
   static function serve() {
     if (Web.getURI().startsWith('/assets/'))
       Sys.print(getFile());
     else {
       Web.setHeader('content-type', 'text/html');
-      Sys.print(site);      
+      Sys.print(Main.document('WWX 2016 in Paris', homepage));      
     }
   }
 	
