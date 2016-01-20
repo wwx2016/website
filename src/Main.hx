@@ -26,6 +26,7 @@ class Main {
     'txt' => 'text/plain',
     'css' => 'text/css',
     'js' => 'application/javascript',
+    'svg' => 'image/svg+xml',
     'png' => 'img/png',
     'gif' => 'img/gif',
     'jpg' => 'img/jpeg',
@@ -69,10 +70,9 @@ class Main {
       serve();
     #end
 	}
-  
-  //@:template static var site;
-  
+    
   static function serve() {
+    File.saveContent('index.html', Main.document('WWX 2016 in Paris', homepage));
     if (Web.getURI().startsWith('/assets/'))
       Sys.print(getFile());
     else {

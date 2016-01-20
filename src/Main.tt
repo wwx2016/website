@@ -30,6 +30,7 @@
 (: static var header :)
   <header>
     <h1>WWX<span class="year">2016</span></h1>
+    <h3>May 27-31 &mdash; Paris</h3>
     <a class="powered-by" href="http://silexlabs.org/">
       proudly hosted by
       <img src="/assets/sponsors/silexlabs.org.png">
@@ -52,19 +53,39 @@
 (: static var intro :)
   <section class="intro">
     <h2>Be part of the ultimate Haxe community event!</h2>
-    <p>This 6th edition of the annual world wide Haxe conference is the place to be at the end of May 2016. Two days of workshops and hackathons, two days of talks, three nights to hang out with fellow Haxers, from all over the planet. Get to meet the people behind Haxe and its ecosystem. Share you experiences with this versatile technology.</p>
+    <p>This 6th edition of the annual world wide Haxe conference is the place to be at the end of May 2016.</p>
+    <p>Listen to amazing talks spanning the whole spectrum that Haxe has to offer. Participate in various workshops and hackathons. Hang out with fellow Haxers, from all over the planet. Meet the people behind Haxe and its ecosystem. Share your experiences with this versatile technology.</p>
   </section>
 (: end :)
 
+(: static var sponsors :)
+  <section class="sponsors">
+    <ul>
+      (:for i in 0...6 :)
+      <li><a href="#"><img src="/assets/sponsors/Rebel_Alliance_logo.svg"></a></li>
+      (: end :)
+    </ul>
+  </section>
+(: end :)
+
+(: static var speakerList = [
+  for (i in 0...6) { 
+    title: 'Do or do not<br>there is no try',
+    name: '@Yoda',
+    link: '#',
+    desc: 'CTO at the Rebel Alliance. Grammar enthusiast.',
+  }
+] :)
+
 (: static var speakers :)       
   <ul>
-    (: for i in 0...23 :)
+    (: for s in speakerList :)
     <li>
       <div class="image">
         <img src="/assets/speakers/Yoda2.jpg">
       </div>
-      <h3>Do or do not,<br>there is no try!</h3>
-      <p><a href="#">@Yoda</a> &ndash; CTO at the rebel aliance. Grammar enthusiast.</p>
+      <h3>(: cast s.title :)</h3>
+      <p><a href="#">(: s.name :)</a> &ndash; (: cast s.desc :)</p>
     </li>
     (: end :)
     <li>
@@ -78,17 +99,41 @@
 (: end :)
 
 (: static var location :)       
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quid ait Aristoteles reliquique Platonis alumni? Hunc vos beatum; Quae est igitur causa istarum angustiarum? </p>
+  <p>This year we once again have the pleasure of being guests of the Mozilla Foundation in their beautiful Paris Campus at the heart of the city.</p>
 
-  <p>Nunc agendum est subtilius. <b>Esse enim, nisi eris, non potes.</b> Verum hoc idem saepe faciamus. Quae sequuntur igitur? <b>Disserendi artem nullam habuit.</b> </p>
+  <p>Nunc agendum est subtilius. <b>Esse enim, nisi eris, non potes.</b> Verum hoc idem saepe faciamus. Quae sequuntur igitur? <b>Disserendi artem nullam habuit.</b></p>
+  <div class="details">
+    <div class="map">
+      <input id="activate-map" type="checkbox">
+      <label for="activate-map">
+        
+      </label>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.268573754079!2d2.341197113109318!3d48.87215642129377!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e3ebb6fbb61%3A0xf1746072f9468986!2sMozilla!5e0!3m2!1sen!2sde!4v1453114788133" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>
+    <div class="gallery">
+      
+    </div>
+  </div>
 (: end :)
         
 (: static var register :)
-
+  <p>We still have a few details to iron out, before we can accept registrations &ndash; so hang in there!</p>
+  <noscript>
+    <h2>Registration for this event will open on Friday 22nd January at 15:00 UTC</h2>
+  </noscript>
+  <div class="countdown nodisplay">
+    <h2>Registration opens in</h2>
+    <div class="components">
+      <span class="hours"></span><span class="minutes"></span><span class="seconds"></span>
+    </div>
+    <h2>Jan 22nd, 15:00 UTC</h2>
+  </div>
 (: end :)
         
 (: static var schedule :)
-  <p>DISCLAIMER: The schedule is still evolving as more and more talks and workshops are announced.</p>
+  <p>DISCLAIMER: The schedule is still evolving as more and more talks and workshops are announced.<br>
+    In the mean time, we invite you to <a href="https://github.com/wwx2016/organization/labels/talk%20proposal">check out the pending proposals</a>.
+  </p>
   <ol class="days">
     (: for day in 'Friday,Saturday,Sunday,Monday'.split(',') :)
     <li>
@@ -111,6 +156,7 @@
   (: nav :)
   (: header :)
   (: intro :)
+  (:* sponsors *:)
   (: section('Speakers', speakers) :)
   (: section('Register', register) :)
   (: section('Location', location) :)
